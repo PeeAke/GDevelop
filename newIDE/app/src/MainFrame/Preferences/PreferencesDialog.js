@@ -16,6 +16,7 @@ import PreferencesContext, {
   type AlertMessageIdentifier,
 } from './PreferencesContext';
 import Text from '../../UI/Text';
+import { ResponsiveLineStackLayout } from '../../UI/Layout';
 
 type Props = {|
   open: boolean,
@@ -58,6 +59,7 @@ export default class PreferencesDialog extends Component<Props, State> {
         onRequestClose={onClose}
         open={open}
         title={<Trans>GDevelop preferences</Trans>}
+        maxWidth="sm"
       >
         <PreferencesContext.Consumer>
           {({
@@ -77,7 +79,7 @@ export default class PreferencesDialog extends Component<Props, State> {
 
             return (
               <Column noMargin>
-                <Line noMargin>
+                <ResponsiveLineStackLayout noMargin>
                   <SelectField
                     floatingLabelText={<Trans>UI Theme</Trans>}
                     value={values.themeName}
@@ -106,7 +108,7 @@ export default class PreferencesDialog extends Component<Props, State> {
                       />
                     ))}
                   </SelectField>
-                </Line>
+                </ResponsiveLineStackLayout>
                 <Line noMargin>
                   <Text>
                     You can contribute and create your own themes:{' '}
