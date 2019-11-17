@@ -30,6 +30,8 @@ type Props = {|
     transition?: string,
     opacity?: number,
     marginRight?: number,
+    marginLeft?: number,
+    marginTop?: number,
   |},
   size?: 'small',
 
